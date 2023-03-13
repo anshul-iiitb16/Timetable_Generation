@@ -127,3 +127,42 @@ let combine colored_list =
 
 (* ------------------------------ Coloring Part Ends----------------------------------------------------- *)
 
+
+
+
+
+(* ------------------------------ Displaying the TimeTable----------------------------------------------------- *)
+
+
+(* Function that returns the timetable given the dict such that it stores the courses which have same color*)
+let make_timetable uniq_map = 
+  List.iter (fun (x,y) -> print_endline("Time Slot " ^ string_of_int(x) ^ ":  " ^ (String.concat " " y))) uniq_map
+
+
+(* ------------------------------ TIMETABLE READY----------------------------------------------------- *)
+
+
+
+
+(* ------------------------------ Running Test Cases----------------------------------------------------- *)
+
+(* Test case 2 in our testcases folder *)
+let course_list = ["C1"; "C2"; "C3"]
+
+let participants_list = ["P1", "P2", "P3", "P4", "P5"]
+
+let par_to_course_map = [("P1", ["C1"; "C3"]); ("P2", ["C1"; "C2"]); ("P3", ["C1"; "C2"]); ("P4", ["C2"]); ("P5", ["C3"])]
+
+
+let t1() = 
+   let reg_data = par_to_course_map in
+     let inverted_data = invert_dict reg_data in
+       let inf_graph = inference_graph inverted_data in
+         let colored_list = basic_color inf_graph in
+           let combined_map = combine colored_list in
+             make_timetable combined_map;;
+             
+
+
+t1();;
+           
