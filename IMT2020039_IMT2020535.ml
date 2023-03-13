@@ -1,3 +1,8 @@
+(*IMT2020039 - Anshul Jindal
+IMT2020535 - Shreeya Venneti*)
+
+
+(* Test case *)
 let course_list = ["C1"; "C2"; "C3"]
 
 let participants_list = ["P1", "P2", "P3", "P4", "P5"]
