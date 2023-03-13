@@ -57,8 +57,9 @@ let rec common list1 list2 =
                 in loop h list2 list2
 
 
-
-let inference_graph dict = 
+(* Function to create inference graph in the form of an edge list *)
+(* The function adds an edge between two courses whenever the 2 courses have atleast one common participant *)
+let interference_graph dict = 
   let rec loop dict acc =
 
     match dict with
